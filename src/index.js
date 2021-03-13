@@ -13,3 +13,15 @@ const addToDo = event => {
   tasks.appendChild(li).innerText = userInput.value; 
   event.target.reset();
 }
+
+//alphaSort
+
+$(function(){
+    function alphaSort(a, b){
+        if(a.innerText > b.innerText) return 1;
+        if(a.innerText < b.innerText) return -1;
+        return 0;
+    }
+    var ul = $('ul');
+    ul.html(ul.find('li').sort(alphaSort));
+})
